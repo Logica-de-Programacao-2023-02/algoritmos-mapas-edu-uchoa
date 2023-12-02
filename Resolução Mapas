@@ -145,6 +145,22 @@ func calcContasCompartilhadas(gastos map[string]float64) map[string]float64 {
 	return saldos
 }
 
-9.
+9.Escreva uma função que gere a sequência de Fibonacci até um determinado número n e retorne um mapa onde as chaves são os
+índices da sequência e os valores são os números correspondentes.
 
+package main
+import "fmt"
+func fibonacci(n int) map[int]int {
+	fibonacci := make(map[int]int)
+	a, b := 0, 1
+	index := 0
+	for a <= n {
+		fibonacci[index] = a
+		a, b = b, a+b
+		index++
+	}
+	return fibonacci
+}
+
+10.
 

@@ -125,4 +125,26 @@ func contarLetras(palavra string) map[rune]int {
 	return contagem
 }
 
-8.
+8.Escreva uma função que receba um mapa onde as chaves são nomes de pessoas e os valores são as quantias de dinheiro 
+que cada pessoa gastou em uma conta compartilhada. A função deve calcular o valor que cada pessoa deve receber
+ou pagar para igualar as despesas.
+
+package main
+import "fmt"
+func calcContasCompartilhadas(gastos map[string]float64) map[string]float64 {
+	totalGasto := 0.0
+	for _, valor := range gastos {
+		totalGasto += valor
+	}
+	mediaGastos := totalGasto / float64(len(gastos))
+	saldos := make(map[string]float64)
+	for nome, valor := range gastos {
+		saldo := valor - mediaGastos
+		saldos[nome] = saldo
+	}
+	return saldos
+}
+
+9.
+
+

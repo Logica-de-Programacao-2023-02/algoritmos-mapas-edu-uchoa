@@ -150,7 +150,7 @@ func calcContasCompartilhadas(gastos map[string]float64) map[string]float64 {
 
 package main
 import "fmt"
-func fibonacci(n int) map[int]int {
+func fibonacciA(n int) map[int]int {
 	fibonacci := make(map[int]int)
 	a, b := 0, 1
 	index := 0
@@ -162,5 +162,19 @@ func fibonacci(n int) map[int]int {
 	return fibonacci
 }
 
-10.
+10.Escreva uma função que receba um slice de inteiros e retorne um mapa onde as chaves são os pares de números encontrados no slice 
+e os valores são as frequências de cada par.
+
+package main
+import "fmt"
+func contarParesFrequencia(slice []int) map[[2]int]int {
+	frequencia := make(map[[2]int]int)
+	for i := 0; i < len(slice); i++ {
+		for j := i + 1; j < len(slice); j++ {
+			pair := [2]int{slice[i], slice[j]}
+			frequencia[pair]++
+		}
+	}
+	return frequencia
+}
 
